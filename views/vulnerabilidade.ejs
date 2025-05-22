@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="vuln-details-card">
+        <h1><%= vulnerabilidade.nome %></h1>
+        
+        <div class="vuln-info">
+            <div class="severity-badge <%= vulnerabilidade.cvss >= 9.0 ? 'critical' : vulnerabilidade.cvss >= 7.0 ? 'high' : 'medium' %>">
+                CVSS: <%= vulnerabilidade.cvss %>
+            </div>
+            
+            <div class="details-section">
+                <h2>Descrição</h2>
+                <p><%= vulnerabilidade.descricao %></p>
+            </div>
+
+            <div class="details-section">
+                <h2>Impacto</h2>
+                <p><%= vulnerabilidade.impacto %></p>
+            </div>
+
+            <div class="details-section">
+                <h2>Mitigação</h2>
+                <p><%= vulnerabilidade.mitigacao %></p>
+            </div>
+
+            <div class="details-section">
+                <h2>Exemplo Prático</h2>
+                <div class="code-example">
+                    <% if (vulnerabilidade.nome === 'SQL Injection') { %>
+                        <pre>SELECT * FROM usuarios WHERE id = ' OR '1'='1</pre>
+                        <p>Este exemplo mostra como um atacante pode manipular uma consulta SQL para obter acesso não autorizado.</p>
+                    <% } else if (vulnerabilidade.nome === 'Cross-Site Scripting (XSS)') { %>
+                        <pre>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</pre>
+                        <p>Este exemplo demonstra como um script malicioso pode ser injetado para roubar cookies do usuário.</p>
+                    <% } else if (vulnerabilidade.nome === 'Buffer Overflow') { %>
+                        <pre>strcpy(buffer, input); // Sem verificação de tamanho</pre>
+                        <p>Este exemplo mostra código vulnerável que não verifica o tamanho da entrada.</p>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="details-section">
+                <h2>Ferramentas de Detecção</h2>
+                <ul class="tools-list">
+                    <% if (vulnerabilidade.nome === 'SQL Injection') { %>
+                        <li>SQLMap: <code>sqlmap -u "http://exemplo.com/page?id=1" --dbs</code></li>
+                    <% } else if (vulnerabilidade.nome === 'Cross-Site Scripting (XSS)') { %>
+                        <li>XSSer: <code>xsser -u "http://exemplo.com/page?id=1"</code></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="/vulnerabilidades" class="btn btn-back">Voltar</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vulnerabilidades</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Vulnerabilidades Conhecidas</h1>
+  <ul>
+    <% vulnerabilidades.forEach(v => { %>
+      <li>
+        <a href="/vulnerabilidade/<%= v.id %>"><%= v.nome %></a> - CVSS: <%= v.cvss %>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

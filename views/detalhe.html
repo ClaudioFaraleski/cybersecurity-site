@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= vul.nome %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1><%= vul.nome %></h1>
+  <p><strong>Descrição:</strong> <%= vul.descricao %></p>
+  <p><strong>Exploit:</strong> <code><%= vul.exploit %></code></p>
+  <p><strong>Mitigação:</strong> <%= vul.mitigacao %></p>
+  <p><strong>CVSS Score:</strong> <%= vul.cvss %></p>
+  <p><a href="/vulnerabilidades">← Voltar</a></p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="search-section">
+        <h2><i class="fas fa-search"></i> Buscar CVE</h2>
+        <div class="search-box">
+            <input type="text" id="cveSearch" placeholder="Digite o código CVE (ex: CVE-2021-44228)">
+            <button onclick="buscarCVE()">Buscar</button>
+        </div>
+    </div>
+
+    <div class="vuln-list">
+        <% vulnerabilidades.forEach(v => { %>
+            <div class="vuln-card">
+                <h3><%= v.nome %></h3>
+                <p class="cvss">CVSS: <span class="score"><%= v.cvss %></span></p>
+                <a href="/vulnerabilidade/<%= v.id %>" class="btn">Ver Detalhes</a>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="examples-section">
+        <h2><i class="fas fa-terminal"></i> Exemplos de Comandos</h2>
+        <div class="command-cards">
+            <div class="command-card">
+                <h3>Nmap Scan</h3>
+                <pre>nmap -sV -T4 10.10.1.10</pre>
+                <p>Realiza varredura de versão de serviços com velocidade moderada</p>
+            </div>
+            
+            <div class="command-card">
+                <h3>Gobuster</h3>
+                <pre>gobuster dir -u http://10.10.1.10 -w /usr/share/wordlists/dirb/common.txt</pre>
+                <p>Enumera diretórios usando wordlist comum</p>
+            </div>
+            
+            <div class="command-card">
+                <h3>Hydra</h3>
+                <pre>hydra -l admin -P rockyou.txt 10.10.1.10 http-get</pre>
+                <p>Ataque de força bruta em login HTTP</p>
+            </div>
+            
+            <div class="command-card">
+                <h3>SQLMap</h3>
+                <pre>sqlmap -u "http://10.10.1.10/product.php?id=1" --dbs</pre>
+                <p>Testa injeção SQL e lista databases</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cpe-search-section">
+        <h2><i class="fas fa-cubes"></i> Buscar por CPE</h2>
+        <div class="search-box">
+            <input type="text" id="cpeSearch" placeholder="Digite o CPE (ex: cpe:2.3:o:microsoft:windows_10:1607)">
+            <button onclick="buscarPorCPE()">Buscar</button>
+            <button onclick="buscarPorCPEParcial()">Buscar Parcial</button>
+        </div>
+    </div>
+
+    <div class="virustotal-section">
+        <h2><i class="fas fa-shield-virus"></i> Análise de Sites (VirusTotal)</h2>
+        <div class="search-box">
+            <input type="url" id="vtUrl" placeholder="Digite a URL para análise">
+            <button onclick="analisarUrl()">Analisar Site</button>
+        </div>
+        <div id="vtResult" class="vt-result"></div>
+    </div>
+</div>
+
+<script src="/js/vulnerabilidades.js"></script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title != 'undefined' ? title : 'Cybersecurity Portal' %></title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <%- typeof style != 'undefined' ? style : '' %>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <span>CyberSec Portal</span>
+        </div>
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="/vulnerabilidades"><i class="fas fa-bug"></i> Vulnerabilidades</a></li>
+            <li><a href="/scanner"><i class="fas fa-search"></i> Scanner</a></li>
+            <li><a href="/ferramentas"><i class="fas fa-tools"></i> Ferramentas</a></li>
+            <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
+        </ul>
+    </nav>
+    
+    <main class="main-content">
+        <%- typeof body != 'undefined' ? body : '' %>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cybersecurity Portal. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%- typeof script != 'undefined' ? script : '' %>
+</body>
+</html>

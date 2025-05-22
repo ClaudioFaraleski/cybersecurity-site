@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sql-injection",
+    "nome": "SQL Injection",
+    "descricao": "Permite que um atacante execute comandos SQL maliciosos.",
+    "exploit": "Exemplo: ' OR 1=1 --",
+    "mitigacao": "Use prepared statements e validação de entrada.",
+    "cvss": 9.8
+  },
+  {
+    "id": "xss",
+    "nome": "Cross-Site Scripting (XSS)",
+    "descricao": "Permite a execução de scripts maliciosos no navegador da vítima.",
+    "exploit": "<script>alert('XSS')</script>",
+    "mitigacao": "Escape de caracteres e políticas de conteúdo.",
+    "cvss": 6.1
+  }
+]

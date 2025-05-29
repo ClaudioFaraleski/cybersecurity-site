@@ -24,9 +24,21 @@ app.use((req, res, next) => {
     next();
 });
 
-// Página inicial
+// Rotas da página inicial
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Home' });
+  res.render('index', { 
+    title: 'Home',
+    style: '',
+    script: '<script src="/js/home.js"></script>'
+  });
+});
+
+app.get('/index', (req, res) => {
+  res.render('index', { 
+    title: 'Home',
+    style: '',
+    script: '<script src="/js/home.js"></script>'
+  });
 });
 
 // Dados de exemplo com mais detalhes

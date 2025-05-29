@@ -1,24 +1,29 @@
 <div class="container">
     <section class="hero">
-        <h1>Bem-vindo ao Portal de Cybersegurança</h1>
-        <p>Sua fonte confiável para informações sobre segurança digital</p>
+        <canvas id="matrixCanvas"></canvas>
+        <div class="hero-content">
+            <h1>Bem-vindo ao Portal de Cybersegurança</h1>
+            <p>Sua fonte confiável para análise de vulnerabilidades e ferramentas de segurança</p>
+        </div>
     </section>
 
     <section class="features">
-        <div class="feature-card">
+        <div class="feature-card" data-link="/vulnerabilidades">
             <i class="fas fa-shield-alt"></i>
-            <h2>Proteção</h2>
-            <p>Aprenda sobre as melhores práticas de segurança digital</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-bug"></i>
             <h2>Vulnerabilidades</h2>
-            <p>Base de dados atualizada de vulnerabilidades conhecidas</p>
+            <p>Explore nossa base de dados de vulnerabilidades</p>
         </div>
-        <div class="feature-card">
+
+        <div class="feature-card" data-link="/scanner">
+            <i class="fas fa-search"></i>
+            <h2>Scanner</h2>
+            <p>Analise sistemas em busca de vulnerabilidades</p>
+        </div>
+
+        <div class="feature-card" data-link="/ferramentas">
             <i class="fas fa-tools"></i>
             <h2>Ferramentas</h2>
-            <p>Acesso às principais ferramentas de segurança</p>
+            <p>Acesse ferramentas de segurança</p>
         </div>
     </section>
 </div>
